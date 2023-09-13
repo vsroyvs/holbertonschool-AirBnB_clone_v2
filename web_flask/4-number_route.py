@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-'''Module to display Python followed by the value text variable
-and set the value by default to is cool'''
+'''Module to display a value integer variable'''
 from flask import Flask
 
 app = Flask(__name__)
