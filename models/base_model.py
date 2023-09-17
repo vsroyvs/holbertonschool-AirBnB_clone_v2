@@ -35,7 +35,7 @@ class BaseModel:
             self.updated_at = datetime.now()
 
         else:
-            if kwargs.get("created_at"):
+            if kwargs.get("updated_at"):
                 kwargs['updated_at'] = datetime.strptime(
                         kwargs['updated_at'],
                         '%Y-%m-%dT%H:%M:%S.%f')
@@ -47,7 +47,7 @@ class BaseModel:
                         kwargs['created_at'],
                         '%Y-%m-%dT%H:%M:%S.%f')
             else:
-                self.update_at = datetime.now()
+                self.created_at = datetime.now()
 
             for key, value in kwargs.items():
                 if '__class__' not in key:
