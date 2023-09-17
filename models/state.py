@@ -21,11 +21,11 @@ else:
     class State(BaseModel):
         name = ""
 
-    @property
-    def cities(self):
-        new_list_cities = []
-        for city in models.storage.all('City').values():
-            if city.state_id == self.id:
-                new_list_cities.append(city)
-
-        return new_list_cities
+        @property
+        def cities(self):
+            from models.city import City
+            new_list_cities = []
+            for city in models.storage.all(City).values():
+                if city.state_id == self.id:
+                    new_list_cities.append(city)
+            return new_list_cities
