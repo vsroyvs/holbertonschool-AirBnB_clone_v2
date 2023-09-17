@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+from typing import Any
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String
@@ -73,3 +74,7 @@ class DBStorage:
         session_fac = sessionmaker(bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(session_fac)
         self.__session = Session()
+
+    def close(self):
+        """Method to close the session"""
+        self.__session.close()
