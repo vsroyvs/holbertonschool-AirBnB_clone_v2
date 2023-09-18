@@ -11,13 +11,13 @@ app = Flask(__name__)
 
 @app.teardown_appcontext
 def close(Exception):
-    """Close the Session"""
+    """ Close the Session """
     storage.close()
 
 
 @app.route('states_list', strict_slashes=True)
 def states_list():
-    """List all states on a HTML page"""
+    """ List all states on a HTML page """
     states = storage.all(State).values()
     sorted_states = sorted(states, key=lambda state: state.name)
     return render_template('7-states_list.html', states=sorted_states)
