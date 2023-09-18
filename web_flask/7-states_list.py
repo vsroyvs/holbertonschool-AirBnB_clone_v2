@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" Module to starts a Flask Web application,
-and to display all State objects """
+""" Module to starts a Flask Web application """
 from flask import Flask, render_template
 from models import storage
 from models.state import State
@@ -15,7 +14,7 @@ def close(Exception):
     storage.close()
 
 
-@app.route('states_list', strict_slashes=True)
+@app.route('states_list', strict_slashes=False)
 def states_list():
     """ List all states on a HTML page """
     states = storage.all(State).values()
