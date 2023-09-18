@@ -14,7 +14,7 @@ def close(Exception):
     storage.close()
 
 
-@app.route('states_list', strict_slashes=False)
+@app.route('/states_list', strict_slashes=False)
 def states_list():
     """ List all states on a HTML page """
     states = storage.all(State).values()
