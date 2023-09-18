@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-'''Module to starts a Flask Web application,
-and to display all State objects'''
+""" Module to starts a Flask Web application,
+and to display all State objects """
 from flask import Flask, render_template
 from models import storage
 from models.state import State
@@ -20,7 +20,7 @@ def states_list():
     """List all states on a HTML page"""
     states = storage.all(State).values()
     sorted_states = sorted(states, key=lambda state: state.name)
-    return render_template('7-states_list.html',states=sorted_states)
+    return render_template('7-states_list.html', states=sorted_states)
 
 
 if __name__ == '__main__':
