@@ -20,7 +20,7 @@ def states():
     """ List all states on a HTML page """
     states = storage.all(State).values()
     sorted_states = sorted(states, key=lambda state: state.name)
-    return render_template('7-states_list', states=sorted_states)
+    return render_template('7-states_list.html', states=sorted_states)
 
 
 @app.route('/states/<id>', strict_slashes=False)
