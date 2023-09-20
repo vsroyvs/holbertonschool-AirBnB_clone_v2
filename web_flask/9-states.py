@@ -24,7 +24,7 @@ def states():
 
 
 @app.route('/states/<id>', strict_slashes=False)
-def states(id):
+def states_id(id):
     """ List all states on a HTML page """
     states = storage.all(State).get(f'State.{id}')
     cities = storage.all(City).values()
